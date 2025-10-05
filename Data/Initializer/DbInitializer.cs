@@ -14,6 +14,7 @@ namespace Data.Initializer
         {
             context.Database.EnsureCreated();
 
+
             //Seed default roles
             if (!context.Roles.Any())
             {
@@ -26,7 +27,7 @@ namespace Data.Initializer
             //Seed default Users with their roles. We adding admin user only for now
             if (!context.Users.Any())
             {
-                var pwHash = BCrypt.Net.BCrypt.HashPassword("P@ssword");
+                var pwHash = BCrypt.Net.BCrypt.HashPassword("P@ssword1");
                 var AdminUser = new User
                 {
                     FullName = "AdminUser",
